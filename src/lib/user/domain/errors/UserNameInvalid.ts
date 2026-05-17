@@ -1,4 +1,4 @@
-import { DomainError } from "../../../shared/domain/errors/Domain.js";
+import { DomainError } from "../../../shared/domain/errors/DomainError.js";
 
 export class UserNameInvalid extends DomainError {
 

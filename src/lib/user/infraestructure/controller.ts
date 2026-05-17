@@ -1,6 +1,6 @@
 import type { Request,Response } from "express"
 import { ServiceContainer } from "../../shared/ServiceContainer.js";
-import { error } from "node:console";
+import { userSchema } from "./zod/userSchema.js";
 
 export class UserController {
 
@@ -8,16 +8,18 @@ export class UserController {
     constructor(){}
 
     createUser = async (req:Request,res:Response)=>{
-        const body = req.body as {name:string,email:string,password:string}
-
-            await ServiceContainer.user.createUser.run(
-                body.name,
-                body.email,
-                body.password,
+        
+        //data insertada en middleware de validacion de datos entrantes
+        const data = req.body.data;
+            
+        await ServiceContainer.user.createUser.run(
+                data.name,
+                data.email,
+                data.password,
                 new Date()
-            )
+        )
 
-            res.status(200).send();
+        res.status(200).send();
    
     }
 
