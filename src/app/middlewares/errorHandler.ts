@@ -4,7 +4,7 @@ import { InvalidDataErrorZod } from "../../lib/shared/infraestructure/errors/Inv
 
 export const errorHandlerMiddleware = (err:unknown ,req:Request,res:Response,next:NextFunction)=>{
 
-    //console.log(err)
+    console.log(err)
     
     if(err instanceof DomainError){
         return res.status(400).json({

@@ -12,7 +12,6 @@ export class User {
 
 
   toPrimitives() {
-
     return {
       id: this.id.value,
       name: this.name.value,

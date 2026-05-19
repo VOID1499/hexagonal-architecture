@@ -1,8 +1,8 @@
 import { PrismaPg } from "@prisma/adapter-pg";
-import { envs } from "../../../../config/envs.js";
+import { envs } from "../../../../../config/envs.js";
 
 //se importa desde el output generado
-import { PrismaClient } from "../data/prisma/generated/prisma/client.js";
+import { PrismaClient } from "./generated/prisma/client.js";
 
 export class PrismaConnection {
 

@@ -11,7 +11,8 @@ export class UserController {
         
         //data insertada en middleware de validacion de datos entrantes
         const data = req.body.data;
-            
+
+        //se envian datos primitivos al caso de uso
         await ServiceContainer.user.createUser.run(
                 data.name,
                 data.email,

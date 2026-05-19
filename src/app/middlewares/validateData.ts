@@ -13,7 +13,7 @@ export const validateDataMiddleware =
       throw new InvalidDataErrorZod("Formato no valido",result.error)
     }
 
-    req.body = result.data
+    req.body.data = result.data
 
     next()
   }
